@@ -1,4 +1,4 @@
-package smarthome.dialogs;
+package webserver.dialogs;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-import smarthome.server.*;
-import smarthome.util.ErrorHandler;
-import smarthome.managers.WhitelistManager;
+import webserver.server.*;
+import webserver.util.ErrorHandler;
+import webserver.managers.WhitelistManager;
 
 public class Dialog implements Runnable{
     private static final Pattern PATTERN = Pattern.compile("^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");

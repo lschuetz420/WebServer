@@ -1,4 +1,4 @@
-package smarthome.server;
+package webserver.server;
 
 public class ServerState {
     

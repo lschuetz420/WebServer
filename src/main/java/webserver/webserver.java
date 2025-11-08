@@ -1,9 +1,9 @@
-package smarthome;
+package webserver;
 
-import smarthome.dialogs.*;
-import smarthome.util.ErrorHandler;
+import webserver.dialogs.*;
+import webserver.util.ErrorHandler;
 
-public class SmartHome {
+public class webserver {
     public static void main(String[] args) {
         try{
             new Dialog().start(args);

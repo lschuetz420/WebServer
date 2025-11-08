@@ -1,6 +1,6 @@
-package smarthome.server;
+package webserver.server;
 
-import smarthome.server.Client;
+import webserver.server.Client;
 
 public class Client{
     String ip;

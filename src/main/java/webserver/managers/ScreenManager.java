@@ -1,10 +1,10 @@
-package smarthome.managers;
+package webserver.managers;
 
 import java.io.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import smarthome.util.ErrorHandler;
+import webserver.util.ErrorHandler;
 
 
 public class ScreenManager{

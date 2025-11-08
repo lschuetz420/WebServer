@@ -1,4 +1,4 @@
-package smarthome.managers;
+package webserver.managers;
 
 import java.io.File;
 import java.io.FileWriter;

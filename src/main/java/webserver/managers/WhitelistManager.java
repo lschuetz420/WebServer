@@ -1,4 +1,4 @@
-package smarthome.managers;
+package webserver.managers;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import smarthome.server.Client;
-import smarthome.util.ErrorHandler;
+import webserver.server.Client;
+import webserver.util.ErrorHandler;
 
 public class WhitelistManager{
 

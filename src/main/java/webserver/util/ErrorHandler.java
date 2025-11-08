@@ -1,11 +1,11 @@
-package smarthome.util;
+package webserver.util;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import smarthome.managers.LogFileManager;
-import smarthome.managers.LogFileManager.Log;
+import webserver.managers.LogFileManager;
+import webserver.managers.LogFileManager.Log;
 
 public class ErrorHandler {
 
