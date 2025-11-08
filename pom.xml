@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SmartHome</groupId>
-    <artifactId>SmartHome</artifactId>
+    <groupId>WebServer</groupId>
+    <artifactId>WebServer</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -18,7 +18,7 @@
             <artifactId>jsoup</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>C:/Projects/SmartHome/src/main/java/smarthome/lib/jsoup.jar</systemPath>
+            <systemPath>C:/Projects/WebServer/src/main/java/smarthome/lib/jsoup.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.mindrot</groupId>
