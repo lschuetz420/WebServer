@@ -1,10 +1,1 @@
-smarthome\managers\LogFileManager.class
-smarthome\server\Server.class
-smarthome\managers\ScreenManager.class
-smarthome\managers\LogFileManager$1.class
-smarthome\server\ServerState.class
-smarthome\server\Client.class
-smarthome\SmartHome.class
-smarthome\dialogs\Dialog.class
-smarthome\managers\WhitelistManager.class
-smarthome\server\ClientHandler.class
+webserver\managers\LogFileManager$1.class
