@@ -14,11 +14,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>src.main.java.smarthome.lib.jsoup</groupId>
+            <groupId>src.main.java.webserver.lib.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>C:/Projects/WebServer/src/main/java/smarthome/lib/jsoup.jar</systemPath>
+            <systemPath>C:/Projects/WebServer/src/main/java/webserver/lib/jsoup.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.mindrot</groupId>
@@ -45,7 +45,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>smarthome.SmartHome</mainClass>
+              <mainClass>webserver.WebServer</mainClass>
             </manifest>
           </archive>
         </configuration>
