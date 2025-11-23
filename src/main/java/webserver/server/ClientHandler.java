@@ -38,7 +38,6 @@ public class ClientHandler implements Runnable{
                 boolean read = true;    
                 
                 while (read){
-                    System.out.println("HTTP:");
                     String line = reader.readLine();
                     if (line == null){
                         read = false;
@@ -127,7 +126,7 @@ public class ClientHandler implements Runnable{
         if (fileFound == true){
             sendContentHTTP(content, contentType, output);
         } else{
-            sendTextHTTP("404 Not Found", "404 Not Found", output);
+            sendTextHTTP("404 Not Found", "404 Not Found");
         }
                     	    
     }
@@ -147,7 +146,7 @@ public class ClientHandler implements Runnable{
         }
     }
 
-    private void sendTextHTTP(String HTTPstatus, String text, OutputStream output){
+    private void sendTextHTTP(String HTTPstatus, String text){
         writer.println("HTTP/1.1 " + HTTPstatus);
         writer.println("Content-Type: text/plain");
         writer.println("Content-Length: " + Integer.toString(text.length()));

@@ -1,5 +1,5 @@
 package webserver.BC;
 
-public class UserBC{
+public class UserBC extends BC{
     
 }

@@ -1,5 +1,6 @@
 package webserver.dialogs;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -118,13 +119,14 @@ public class Dialog implements Runnable{
         while(DO){
             System.out.println("Enter command:");
             String command = scanner.nextLine();
+            String[] keywords = command.split(" ");
             boolean commandAccepted = false;
             
-            switch (command){
+            switch (keywords[0]){
                 
                 case "Help":
                 case "help":
-                    System.out.println("Syntax: Powershell. Commands: 'Close-Server', 'Add-Entry Whitelist -Type Custom', 'Add-Entry Whitelist -Type User', 'Delete-Entry Whitelist'");
+                    System.out.println("Syntax: Powershell. Commands: 'Close-Server', 'Add-Entry -Target Whitelist -Type Custom', 'Add-Entry -Target Whitelist -Type User', 'Delete-Entry Whitelist'");
                     commandAccepted = true;
                 break;
 
@@ -140,27 +142,91 @@ public class Dialog implements Runnable{
                     DO = false;
                     scanner.close();
                 break;
+                    
+                case "Add-Entry":
+                    switch (keywords[1]) {
+                        case "-Target":
+                            switch (keywords[2]) {
+                                case "Whitelist":
+                                    switch (keywords[3]) {
+                                        case "-Type":
+                                            switch (keywords[4]) {
+                                                case "User":
+                                                    addUserEntryWhitelistDialog();
+                                                    commandAccepted = true;
+                                                break;
+                                                    
+                                                case "Custom":
+                                                    addCustomEntryWhitelistDialog();
+                                                    commandAccepted = true;                               
+                                                break;
+                                            
+                                                default:
+                                                    commandAccepted = false;
+                                                break;
+                                            }
+                                        break;
+                                    
+                                        default:
+                                            commandAccepted = false;
+                                        break;
+                                    }
+                                break;
 
-                case "Add-Entry -Target Whitelist -Type Custom":
-                    addCustomEntryWhitelistDialog();
-                    commandAccepted = true;
+                                default:
+                                    commandAccepted = false;
+                                break;
+                            }
+                        break;
+                    
+                        default:
+                            commandAccepted = false;
+                        break;
+                    }
                 break;
 
-                case "Add-Entry -Target Whitelist -Type User":
-                    addUserEntryWhitelistDialog();
-                    commandAccepted = true;
+                case "Delete-Entry":
+                    switch (keywords[1]) {
+                        case "-Target":
+                            switch (keywords[2]) {
+                                case "Whitelist":
+                                    deleteUserEntryWhitelistDialog();
+                                    commandAccepted = true;                                    
+                                break;
+
+                                default:
+                                    commandAccepted = false;
+                                break;
+                            }
+                        break;
+                    
+                        default:
+                            commandAccepted = false;
+                        break;
+                    }
                 break;
 
-                case "Delete-Entry -Target Whitelist":
-                    deleteUserEntryWhitelistDialog();
-                    commandAccepted = true;
-                break;
+                case "Get-Content":
+                    switch (keywords[1]) {
+                        case "-Target":
+                            switch (keywords[2]) {
+                                case "Whitelist":
+                                    try{
+                                        System.out.println(new WhitelistManager().getWhitelist());
+                                    } catch (IOException e){
+                                        new ErrorHandler().printToConsoleAddLog(e);
+                                    }
+                                break;
 
-                case "Get-Content -Target Whitelist":
-                    try{
-                        System.out.println(new WhitelistManager().getWhitelist());
-                    } catch (IOException e){
-                        new ErrorHandler().printToConsoleAddLog(e);
+                                default:
+                                    commandAccepted = false;
+                                break;
+                            }
+                        break;
+                    
+                        default:
+                            commandAccepted = false;
+                        break;
                     }
                 break;
 

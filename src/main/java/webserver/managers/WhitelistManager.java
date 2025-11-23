@@ -12,7 +12,7 @@ import webserver.util.ErrorHandler;
 public class WhitelistManager{
 
     private File whitelistFile;
-    private String path = "C:/Projects/SmartHome/src/main/java/smarthome/properties/Whitelist.txt";
+    private String path = "./src/main/java/webserver/security/Whitelist.txt";
     
     private FileWriter fileWriter;
 

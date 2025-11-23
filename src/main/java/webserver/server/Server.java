@@ -68,7 +68,10 @@ public class Server{
                     String clientIP = clientSocket.getInetAddress().getHostAddress();
                     String clientName = clientSocket.getInetAddress().getHostName();
                     Client client = new Client(clientIP, clientName);
-                    clients.add(client);
+
+                    if (!clients.contains(client)){
+                        clients.add(client);
+                    }
 
                     LocalDate date = LocalDate.now();
                     LocalTime time = LocalTime.now();
