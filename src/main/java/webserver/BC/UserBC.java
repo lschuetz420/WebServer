@@ -3,8 +3,9 @@ package webserver.BC;
 import java.sql.SQLException;
 
 import webserver.database.DatabaseOperator;
+import webserver.util.ErrorHandler;
 
-public class UserBC extends BC{
+public class UserBC{
 
     private DatabaseOperator operator;
 
@@ -12,7 +13,7 @@ public class UserBC extends BC{
         try(DatabaseOperator operator = new DatabaseOperator()){
             operator.saveUser(null);
         } catch (SQLException e){
-
+            new ErrorHandler().printToConsoleAddLog(e);
         }
     }
 }
