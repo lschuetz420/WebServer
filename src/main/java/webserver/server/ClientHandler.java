@@ -51,12 +51,12 @@ public class ClientHandler implements Runnable{
                     }
                 }
 
-                if (request.size() != 0){
                 /* *for testing http* 
-                    for (int i = 0; i < request.size(); i++){
-                        System.out.println(request.get(i));
-                    }
+                for (int i = 0; i < request.size(); i++){
+                    System.out.println(request.get(i));
+                }
                 */
+                if (request.size() != 0){
                     String line0 = request.get(0);
                     
                     if (line0.contains("GET")){

@@ -119,7 +119,7 @@ public class Dialog implements Runnable{
         while(DO){
             System.out.println("Enter command:");
             String command = scanner.nextLine();
-            String[] keywords = command.split(" ");
+            String[] keywords = command.trim().split(" ");
             boolean commandAccepted = false;
             
             switch (keywords[0]){
