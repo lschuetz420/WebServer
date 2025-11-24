@@ -52,10 +52,10 @@ public class ClientHandler implements Runnable{
                 }
 
                 /* *for testing http* 
+                */
                 for (int i = 0; i < request.size(); i++){
                     System.out.println(request.get(i));
                 }
-                */
                 if (request.size() != 0){
                     String line0 = request.get(0);
                     
@@ -79,6 +79,10 @@ public class ClientHandler implements Runnable{
         String contentType = "";
         String endOfFileName = "";
         boolean fileFound = true;
+
+        if (fileName.equals("index.html")){
+            fileName = fileName.replace("index", "login");
+        }
 
         if (fileName.contains(".")){
 
@@ -109,7 +113,7 @@ public class ClientHandler implements Runnable{
         } else if (fileName.equals("/")){
             contentType = "text/html; charset=UTF-8s";
             endOfFileName = "html";
-            fileName = "index.html";
+            fileName = "login.html";
         } else {    
             fileFound = false;
         }
@@ -117,7 +121,7 @@ public class ClientHandler implements Runnable{
         byte [] content = null;
 
         try {
-            Path path = Path.of("C:\\Projects\\SmartHome\\frontend\\" + endOfFileName + "\\" + fileName);
+            Path path = Path.of(".\\frontend\\" + endOfFileName + "\\" + fileName);
             content = Files.readAllBytes(path);
         } catch (Exception e){
             fileFound = false;    
